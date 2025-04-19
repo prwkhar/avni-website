@@ -143,16 +143,8 @@ export const pageQuery = graphql`
         author
         description
         tags
-        image: featuredimage {
-          childImageSharp {
-            resize(width: 1200) {
-              src
-              height
-              width
-            }
-          }
-        }
-      }
+        image: featuredimage      
+     }
       fields {
 			slug
 	    }

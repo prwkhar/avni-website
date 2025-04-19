@@ -40,14 +40,7 @@ export default () => (
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
                 author
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
+                featuredimage               }
             }
           }
         }
