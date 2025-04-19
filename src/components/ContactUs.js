@@ -85,6 +85,7 @@ export default class ContactUs extends React.Component {
                     border: 1px solid #ddd;
                     box-shadow: 0 4px 8px rgba(42, 27, 27, 0.35);
                     margin: 20px auto;
+                    max-width: 1200px;
                 }
                 .inputbox {
                     background-color: white;

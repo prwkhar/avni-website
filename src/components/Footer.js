@@ -1,50 +1,88 @@
 import React from 'react';
-import GitHubLogo from '../img/social/GitHub.png';
-// import TwitterLogo from '../img/social/twitter.svg';
-import YouTubeLogo from '../img/social/youtube.png';
-import PlayStoreLogo from '../img/social/playstore-icon.png';
+import { FaGithub, FaYoutube, FaGooglePlay, FaLinkedin } from 'react-icons/fa';
 import ExternalLink from "./ExternalLink";
 import Icons8Icon from '../img/attributions/icons8.png';
-import LinkedinIcon from '../img/social/linkedin-logo.png';
 
 const Footer = class extends React.Component {
     render() {
         return (
-            <footer className="footer has-text-black" style={{paddingTop: 0, backgroundColor: 'lightgrey'}}>
-                <br/>
-                <div className="has-text-centered has-text-weight-bold" style={{paddingLeft: 10, paddingRight: 10}}>Avni is fully open source project run by
-                    a <ExternalLink href="https://samanvayfoundation.org/"
-                                    text="small technology non-profit"/>
-                </div>
-                <br/>
+            <footer className="
+            has-text-white modern-footer">
+                <style>
+                    {`
+                    .modern-footer {
+                        background-color:rgb(4, 15, 28); /* Deep modern blue-gray */
+                        padding: 3rem 1.5rem;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        color: white;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                    }
 
-                <div className="has-text-centered">
+                    .footer-credit {
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                        max-width: 800px;
+                        line-height: 1.6;
+                    }
+
+                    .footer-icons {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 30px;
+                        margin-top: 1.5rem;
+                    }
+
+                    .footer-icons a {
+                        color: white;
+                        transition: transform 0.3s ease, color 0.3s ease;
+                    }
+
+                    .footer-icons a:hover {
+                        transform: scale(1.2);
+                    }
+
+                    .footer-icons a:nth-child(1):hover { color: #6e5494; } /* GitHub */
+                    .footer-icons a:nth-child(2):hover { color: #FF0000; } /* YouTube */
+                    .footer-icons a:nth-child(3):hover { color: #34A853; } /* Play Store */
+                    .footer-icons a:nth-child(4):hover { color: #0077b5; } /* LinkedIn */
+
+                    .footer-credits-row {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 1rem 0;
+                        gap: 12px;
+                    }
+                    `}
+                </style>
+
+                <div className="footer-credit">
+                    Avni is fully open source project run by a{" "}
+                    <ExternalLink href="https://samanvayfoundation.org/" text="small technology non-profit" />
+                </div>
+
+                <div className="footer-icons">
                     <ExternalLink href="https://github.com/avniproject">
-                        <img loading="lazy" alt="GitHub" src={GitHubLogo} style={{height: 48, width: 48}}/>
+                        <FaGithub size={36} />
                     </ExternalLink>
-                    {/*<ExternalLink href="https://twitter.com/avniproject">*/}
-                    {/*    <img alt="Twitter" src={TwitterLogo} style={{marginLeft: 10, height: 48, width: 48}}/>*/}
-                    {/*</ExternalLink>*/}
                     <ExternalLink href="https://www.youtube.com/channel/UCShsfKJlw0B3B6Pg2DmQkSQ">
-                        <img loading="lazy" alt="YouTube" src={YouTubeLogo} style={{height: 48, width: 67, marginLeft: 10}}/>
+                        <FaYoutube size={36} />
                     </ExternalLink>
                     <ExternalLink href="https://play.google.com/store/apps/details?id=com.openchsclient">
-                        <img loading="lazy" alt="Play Store" src={PlayStoreLogo} style={{height: 48, width: 48, marginLeft: 10}}/>
+                        <FaGooglePlay size={36} />
                     </ExternalLink>
                     <ExternalLink href="https://www.linkedin.com/showcase/avniproject">
-                        <img loading="lazy" alt="LinkedIn" src={LinkedinIcon} style={{height: 48, width: 48, marginLeft: 10}}/>
-                    </ExternalLink>
-                </div>
-                <div className="has-text-left">
-                    <ExternalLink href="https://www.netlify.com">
-                        <img loading="lazy" alt="Netlify" src="https://www.netlify.com/img/global/badges/netlify-dark.svg" style={{height: 40, marginLeft: 10, marginTop: 0, marginBottom: 5}}/>
-                    </ExternalLink>
-                    <ExternalLink href="https://icons8.com">
-                        <img loading="lazy" alt="Icons8" src={Icons8Icon} style={{height: 40, marginLeft: 5, marginTop: 0, marginBottom: 0}}/>
+                        <FaLinkedin size={36} />
                     </ExternalLink>
                 </div>
             </footer>
-        )
+        );
     }
 };
 
